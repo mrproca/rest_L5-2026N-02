@@ -2,10 +2,12 @@
 using L5_2025N_02.Controllers.Dtos.Bids;
 using L5_2025N_02.Model;
 using L5_2025N_02.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace L5_2025N_02.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("auctions")]
 public class AuctionsController(AuctionService auctionService, BidService bidService, ILogger<AuctionsController> logger): ControllerBase
